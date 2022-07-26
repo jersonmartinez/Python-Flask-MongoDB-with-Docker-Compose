@@ -1,0 +1,48 @@
+version: '3.9'
+services:
+  web:
+    env_file:
+      - .env
+    container_name: ${WEB_HOST}
+    hostname: ${WEB_HOST}
+    build: ./app
+    entrypoint:
+      - flask
+      - run
+      - --host=0.0.0.0
+    environment:
+      FLASK_DEBUG: 1
+      FLASK_APP: ./app.py
+      FLASK_RUN_HOST: 0.0.0.0
+      TEMPLATES_AUTO_RELOAD: 'True'
+      FLASK_ENV: development
+    ports: 
+      - '8000:5000'
+    links:
+      - database
+    depends_on:
+      - database
+    volumes:
+      - ./app:/app
+    networks:
+      - default
+  database:
+    image: mongo:latest
+    env_file:
+      - .env
+    container_name: ${MONGO_HOST}
+    hostname: ${MONGO_HOST}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS}
+      MONGO_INITDB_DATABASE: ${MONGO_DB}
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./mongo-volume:/data/db
+      - ./mongo-volume/log:/var/log/mongodb/
+    ports:
+      - '27017-27019:27017-27019'
+    networks:
+      - default
+volumes:
+  persistent:
