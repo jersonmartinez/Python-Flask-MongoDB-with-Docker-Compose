@@ -39,7 +39,7 @@ def get_api():
 
 @app.route('/', methods=('GET', 'POST'))
 def hello():
-    return '<h1 style="background-color: blue; color: white; padding: 20px; text-align:center;">Hello, Crashell!</h1>'
+    return '<h1 style="background-color: #262626; color: white; padding: 20px; text-align:center;">Hello, Crashell!</h1>'
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
