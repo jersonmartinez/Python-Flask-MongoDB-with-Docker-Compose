@@ -56,7 +56,7 @@ $ curl 127.0.0.1:8000
 
 Result using the browser.
 
-
+![imagen](https://user-images.githubusercontent.com/7296281/181147140-1dff4b18-ff96-48ee-bf05-5e84413b0e70.png)
 
 ## Testing MongoDB Connection as an API
 
