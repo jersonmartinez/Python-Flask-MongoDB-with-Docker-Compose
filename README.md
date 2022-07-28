@@ -68,6 +68,10 @@ $ curl 127.0.0.1:8000/api
 "Connected to the MongoDB Server!"
 ```
 
+Result using the browser.
+
+![imagen](https://user-images.githubusercontent.com/7296281/181652616-c1a319b0-d649-47af-b96f-28e5f7634f9c.png)
+
 ## Other instructions
 
 #### Remove volumes
