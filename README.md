@@ -1,5 +1,5 @@
 # Python-Flask-MongoDB-with-Docker-Compose
-Launching Tech Stack in order to Python, Flask Framework and MongoDB with Docker Compose.
+Launching Tech Stack in order to Python, Flask Framework and MongoDB with Docker Compose. For this documentation, I have an interesting full article that I recommend you [Python, Flask, MongoDB with Docker Compose](https://www.crashell.com/estudio/python_flask_y_mongodb_con_docker_compose).
 
 ## Execution this Docker Compose.
 
